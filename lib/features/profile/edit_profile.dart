@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../../bootcamp_starter/lib/core/widgets/custom_labeled_textfield_widget.dart';
-import '../../../../bootcamp_starter/lib/core/widgets/secondary_button_widget.dart';
-import '../../../../bootcamp_starter/lib/features/auth/login_view.dart';
+import '../../core/widgets/custom_labeled_textfield_widget.dart';
+import '../../core/widgets/secondary_button_widget.dart';
+import '../auth/login_view.dart';
+
+
 class EditProfile extends StatelessWidget {
   const EditProfile({super.key});
 
