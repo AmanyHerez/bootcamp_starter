@@ -1,8 +1,5 @@
 
-
-import 'package:bootcamp_starter/models/login_user.dart';
 import 'package:bootcamp_starter/models/register_user.dart';
-
 import '../prefs/shared_pref_controller.dart';
 import 'api_helper.dart';
 
@@ -15,11 +12,11 @@ class AuthApi {
       'email' : email ,
       'password': password
     },{});
-    if( login_user.fromJson(response).token != null){
-      print(login_user.fromJson(response).token );
-      SharedPreController().save(login_user.fromJson(response).token);
-    }
+    if( Regisered_user.fromJson(response).token != null) {
+      print(Regisered_user.fromJson(response).token);
+        SharedPreController().update_token(token:Regisered_user.fromJson(response).token!);
 
+    }
 
   }
 
@@ -30,11 +27,9 @@ class AuthApi {
       'password': password,
       'password_confirmation': password
     }, {});
-    if (regiser_user.fromJson(response).token != null) {
-      print(regiser_user.fromJson(response).token);
-      SharedPreController().save(login_user.fromJson(response).token);
-
-
+    if (Regisered_user.fromJson(response).token != null) {
+      print(Regisered_user.fromJson(response).token);
+       SharedPreController().save_user(user: Regisered_user.fromJson(response));
     }
   }
 }

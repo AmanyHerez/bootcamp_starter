@@ -1,9 +1,7 @@
 import 'package:bootcamp_starter/core/widgets/custom_text.dart';
-import 'package:bootcamp_starter/features/main_app/widgets/custom_floating_nav_bar.dart';
 import 'package:flutter/material.dart';
+import '../../core/util/constants.dart';
 
-import '../../core/util/constants.dart';
-import '../../core/util/constants.dart';
 
 
 class ReceiveView extends StatelessWidget {
@@ -33,13 +31,12 @@ class ReceiveView extends StatelessWidget {
 
             Expanded(
               child: ListView.builder(
-                itemCount: 3,
+                itemCount: 10,
                   itemBuilder: (BuildContext context,  int index){
                     return ReciverListView();
                   }),
             ),
-
-            // const CustomFloatingNavBar(currentIndex: 0),
+            SizedBox(height: 100,)
 
           ],
         ),

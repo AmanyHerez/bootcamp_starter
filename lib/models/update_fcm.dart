@@ -1,12 +1,14 @@
-import 'User.dart';
+import 'package:bootcamp_starter/models/r_user.dart';
+
+
 
 class update_fcm {
-  User? user;
+  R_User? user;
 
   update_fcm({this.user});
 
   update_fcm.fromJson(Map<String, dynamic> json) {
-    user = json['user'] != null ? new User.fromJson(json['user']) : null;
+    user = json['user'] != null ? new R_User.fromJson(json['user']) : null;
   }
 
   Map<String, dynamic> toJson() {

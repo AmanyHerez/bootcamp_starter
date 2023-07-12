@@ -7,10 +7,10 @@ class PrimaryLabeledTextFieldWidget extends StatelessWidget {
   final TextEditingController? controller;
   final bool password;
   final TextInputType? keyboardType;
-  const PrimaryLabeledTextFieldWidget(
+   PrimaryLabeledTextFieldWidget(
       {super.key,
       required this.label,
-      this.controller,
+        this.controller,
       this.hint,
       this.password = false,
       this.keyboardType});

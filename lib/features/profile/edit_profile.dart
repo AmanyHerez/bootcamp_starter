@@ -35,21 +35,21 @@ class EditProfile extends StatelessWidget {
             const SizedBox(
               height:23,
             ),
-            const PrimaryLabeledTextFieldWidget(
+             PrimaryLabeledTextFieldWidget(
               label: 'name',
               hint: 'Dina Almasri',
             ),
             const SizedBox(
               height: 15,
             ),
-            const PrimaryLabeledTextFieldWidget(
+             PrimaryLabeledTextFieldWidget(
               label: 'email',
               hint: '123@gmail.com',
             ),
             const SizedBox(
               height: 15,
             ),
-            const PrimaryLabeledTextFieldWidget(
+             PrimaryLabeledTextFieldWidget(
               label: 'phone',
               hint: '1234567',
             ),

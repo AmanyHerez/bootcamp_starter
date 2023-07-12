@@ -1,5 +1,6 @@
+import 'package:bootcamp_starter/models/r_user.dart';
 import 'package:bootcamp_starter/prefs/shared_pref_controller.dart';
-import '../models/User.dart';
+
 import 'api_helper.dart';
 
 class UsersApi {
@@ -8,8 +9,8 @@ class UsersApi {
 
   String userToken = SharedPreController().getValueFor<String>(key: Prefkeys.token.name)!;
 
-  Future<void> update_location({ required String lat , required String long}) async {
-    final response = await _helper.put("/update/1", {
+  Future<void> update_location({ required int id, required String lat , required String long}) async {
+    final response = await _helper.put("/update/$id", {
       'lat':lat,
       'long':long
     },
@@ -18,14 +19,14 @@ class UsersApi {
     });
   }
 
-  Future<void> update_fcm({required String fcm}) async {
-    final response = await _helper.put("/fcm/1", {
+  Future<void> update_fcm({ required int id ,required String fcm}) async {
+    final response = await _helper.put("/fcm/$id", {
       'fcm':fcm,
     },
         {
           'Authorization': 'Bearer $userToken',
         });
-    print(User.fromJson(response).fcm);
+    // print(R_User.fromJson(response).fcm);
 
   }
 }

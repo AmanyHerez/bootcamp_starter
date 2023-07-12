@@ -1,10 +1,17 @@
 import 'package:bootcamp_starter/features/home/qr_scan.dart';
 import 'package:bootcamp_starter/features/home/widgets/show_link.dart';
+import 'package:bootcamp_starter/prefs/shared_pref_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import '../../api/api_response.dart';
+import '../../provider/link_provider.dart';
+import '../profile/user_card_profile_widget.dart';
 
 class HomeView extends StatelessWidget {
   static String id = '/homeView';
+
   const HomeView({super.key});
 
   @override
@@ -44,14 +51,15 @@ class HomeView extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 32),
-            child: Text('Hello, Ahmed!', style: GoogleFonts.roboto(
-                fontSize: 28,
-                fontWeight: FontWeight.w600,
-                letterSpacing: 0.1
-            ),),
+            child: Text('Hello,Ahmed',
+              style: GoogleFonts.roboto(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.1
+              ),),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 20,left: 34, right: 34),
+            padding: EdgeInsets.only(top: 20, left: 34, right: 34),
             child: Image.asset(
               'assets/imgs/qrCode.png',
               width: 317.72,
@@ -62,7 +70,7 @@ class HomeView extends StatelessWidget {
           Container(
             width: 198.0,
             height: 2.0,
-            margin: EdgeInsets.only(top: 30, left: 81.0,right: 81,bottom: 35),
+            margin: EdgeInsets.only(top: 30, left: 81.0, right: 81, bottom: 35),
             decoration: BoxDecoration(
               border: Border.all(width: 2.2),
             ),
@@ -87,7 +95,7 @@ class HomeView extends StatelessWidget {
                     child: Column(
                       children: [
                         IconButton(
-                          onPressed: (){},
+                          onPressed: () {},
                           icon: Icon(Icons.add_outlined),
                           color: Color(0xFF2D2B4E),
                         ),
