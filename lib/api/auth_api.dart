@@ -1,6 +1,6 @@
-
+import 'package:bootcamp_starter/models/models/register_user.dart';
+import 'package:bootcamp_starter/models/r_user.dart';
 import 'package:bootcamp_starter/models/register_user.dart';
-import '../models/models/register_user.dart';
 import '../prefs/shared_pref_controller.dart';
 import 'api_helper.dart';
 
@@ -13,9 +13,16 @@ class AuthApi {
       'email' : email ,
       'password': password
     },{});
-    if( Regisered_user.fromJson(response).token != null) {
-      print(Regisered_user.fromJson(response).token);
-        SharedPreController().update_token(token:Regisered_user.fromJson(response).token!);
+    if( Registered_user.fromJson(response).token != null) {
+      String name = Registered_user.fromJson(response).user!.name!;
+      String email = Registered_user.fromJson(response).user!.email;
+      String createdAt = Registered_user.fromJson(response).user!.createdAt;
+      String updatedAt = Registered_user.fromJson(response).user!.updatedAt;
+      String token = Registered_user.fromJson(response).token!;
+      int id = Registered_user.fromJson(response).user!.id;
+      R_Users user = R_Users(name,email,updatedAt,createdAt,id);
+      Registered_user registered_user = Registered_user(user: user , token: token);
+      SharedPreController().save_user(user: registered_user);
 
     }
 
@@ -28,9 +35,16 @@ class AuthApi {
       'password': password,
       'password_confirmation': password
     }, {});
-    if (Regisered_user.fromJson(response).token != null) {
-      print(Regisered_user.fromJson(response).token);
-       SharedPreController().save_user(user: Regisered_user.fromJson(response));
+    if (Registered_user.fromJson(response).token != null) {
+      String name = Registered_user.fromJson(response).user!.name;
+      String email = Registered_user.fromJson(response).user!.email;
+      String createdAt = Registered_user.fromJson(response).user!.createdAt;
+      String updatedAt = Registered_user.fromJson(response).user!.updatedAt;
+      String token = Registered_user.fromJson(response).token!;
+      int id = Registered_user.fromJson(response).user!.id;
+      R_Users user = R_Users(name,email,updatedAt,createdAt,id);
+      Registered_user registered_user = Registered_user(user: user , token: token);
+      SharedPreController().save_user(user: registered_user);
     }
   }
 }

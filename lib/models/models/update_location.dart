@@ -1,13 +1,14 @@
+
 import 'package:bootcamp_starter/models/r_user.dart';
 
 
 class update_location {
-  R_User? user;
+  R_Users? user;
 
   update_location({this.user});
 
   update_location.fromJson(Map<String, dynamic> json) {
-    user = json['user'] != null ? new R_User.fromJson(json['user']) : null;
+    user = json['user'] != null ? new R_Users.fromJson(json['user']) : null;
   }
 
   Map<String, dynamic> toJson() {

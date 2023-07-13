@@ -1,15 +1,16 @@
 import 'package:bootcamp_starter/models/r_user.dart';
 
-class regiser_user {
+import 'models/r_user.dart';
+
+class Registered_user {
   String? message;
-  R_User? user;
+  late R_Users user;
   String? token;
 
-  regiser_user({this.message, this.user, this.token});
-
-  regiser_user.fromJson(Map<String, dynamic> json) {
+  Registered_user({this.message, required this.user , this.token});
+  Registered_user.fromJson(Map<String, dynamic> json) {
     message = json['message'];
-    user = json['user'] != null ? new R_User.fromJson(json['user']) : null;
+    user = json['user']  ;
     token = json['token'];
   }
 
@@ -23,4 +24,3 @@ class regiser_user {
     return data;
   }
 }
-
